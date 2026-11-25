@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FINZ CHEAT</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090909;color:white;font-family:Arial,sans-serif;padding:22px}
+header{text-align:center;color:#ff2929;font-size:28px;font-weight:bold;margin:25px 0}
+.panel{background:#171717;border:1px solid #5e1717;border-radius:15px;padding:18px;margin:15px 0}
+input{width:100%;padding:14px;background:#080808;border:1px solid #a22;color:white;border-radius:8px}
+button{background:#c90020;color:white;border:0;padding:13px;border-radius:8px;width:100%;font-weight:bold;margin-top:12px}
+.feature{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid #333}
+small{color:#999}
+#dashboard{display:none}
+</style>
+</head>
+<body>
+<header>FINZ CHEAT</header>
+
+<div class="panel" id="login">
+<h3>ACCESS KEY</h3>
+<p><small>Masukkan kunci akses demo</small></p>
+<input id="key" placeholder="Masukkan access key">
+<button onclick="login()">LOGIN</button>
+<p id="msg"></p>
+</div>
+
+<div id="dashboard">
+<div class="panel">
+<h3>WELCOME TO FINZ</h3>
+<small>PREMIUM CONTROL PANEL</small>
+</div>
+<div class="panel">
+<div class="feature">DRAG HS <input type="checkbox"></div>
+<div class="feature">BODY LOCK <input type="checkbox"></div>
+<div class="feature">ESP MOCO <input type="checkbox"></div>
+</div>
+<div class="panel">
+<h3>SHIZUKU STATUS</h3>
+<p id="status">Status: Belum diperiksa</p>
+<button onclick="checkShizuku()">PERIKSA STATUS</button>
+</div>
+<button onclick="logout()">LOGOUT</button>
+</div>
+
+<script>
+function login(){
+if(document.getElementById('key').value.trim()==='FNZ-CH-280412'){
+document.getElementById('login').style.display='none';
+document.getElementById('dashboard').style.display='block';
+}else{
+document.getElementById('msg').textContent='ACCESS KEY SALAH';
+}
+}
+function logout(){
+document.getElementById('dashboard').style.display='none';
+document.getElementById('login').style.display='block';
+}
+function checkShizuku(){
+document.getElementById('status').textContent='Status: Perlu integrasi aplikasi Shizuku Android';
+}
+</script>
+</body>
+</html>
